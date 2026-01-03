@@ -3,10 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SECURITY: Content Security Policy (CSP) to prevent XSS and data injection -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://unpkg.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://generativelanguage.googleapis.com https://api.dicebear.com; font-src 'self' data:;">
+    
     <title>Dattamsha Data Labs | The Autonomous HR Architecture</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    
+    <!-- SECURITY: Use specific versions instead of @latest to prevent supply chain attacks -->
+    <script src="https://cdn.tailwindcss.com?v=3.4.1"></script>
+    <script src="https://unpkg.com/lucide@0.294.0/dist/umd/lucide.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked@11.1.1/marked.min.js"></script>
+    <!-- SECURITY: DOMPurify for sanitizing LLM output before rendering -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.8/purify.min.js"></script>
+
     <script>
         tailwind.config = {
             theme: {
@@ -196,16 +204,17 @@
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div class="space-y-2">
                                 <label class="text-sm font-medium text-slate-300">Job Title</label>
-                                <input type="text" id="jd-title" placeholder="e.g. Senior Data Scientist" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-white focus:ring-2 focus:ring-brand-accent focus:border-transparent outline-none transition-all">
+                                <!-- SECURITY: maxLength added to prevent input buffer overflows -->
+                                <input type="text" id="jd-title" maxlength="100" placeholder="e.g. Senior Data Scientist" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-white focus:ring-2 focus:ring-brand-accent focus:border-transparent outline-none transition-all">
                             </div>
                             <div class="space-y-2">
                                 <label class="text-sm font-medium text-slate-300">Department</label>
-                                <input type="text" id="jd-dept" placeholder="e.g. People Analytics" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-white focus:ring-2 focus:ring-brand-accent focus:border-transparent outline-none transition-all">
+                                <input type="text" id="jd-dept" maxlength="100" placeholder="e.g. People Analytics" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-white focus:ring-2 focus:ring-brand-accent focus:border-transparent outline-none transition-all">
                             </div>
                         </div>
                         <div class="space-y-2">
                             <label class="text-sm font-medium text-slate-300">Key Skills & Technologies</label>
-                            <input type="text" id="jd-skills" placeholder="e.g. Python, SQL, Tableau, Workday" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-white focus:ring-2 focus:ring-brand-accent focus:border-transparent outline-none transition-all">
+                            <input type="text" id="jd-skills" maxlength="200" placeholder="e.g. Python, SQL, Tableau, Workday" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-white focus:ring-2 focus:ring-brand-accent focus:border-transparent outline-none transition-all">
                         </div>
                         <div class="space-y-2">
                             <label class="text-sm font-medium text-slate-300">Experience Level</label>
@@ -503,7 +512,8 @@
                         <div id="chat-history" class="space-y-4 mb-4"></div>
                         <div class="flex items-center gap-2 pt-2 border-t border-slate-800/50">
                             <span class="text-brand-accent">admin@dattamsha:~$</span>
-                            <input type="text" id="agent-input" class="bg-transparent border-none outline-none text-white flex-1 focus:ring-0" placeholder="Type command..." autocomplete="off">
+                            <!-- SECURITY: maxLength added -->
+                            <input type="text" id="agent-input" maxlength="200" class="bg-transparent border-none outline-none text-white flex-1 focus:ring-0" placeholder="Type command..." autocomplete="off">
                             <button id="agent-submit" class="text-brand-accent hover:text-white transition-colors"><i data-lucide="arrow-right" class="w-4 h-4"></i></button>
                         </div>
                     </div>
@@ -523,7 +533,7 @@
                         <div class="founder-front relative rounded-2xl overflow-hidden border border-slate-700 bg-slate-800 group shadow-2xl">
                             <img 
                                 id="founder-img"
-                                src="https://github.com/daksh92/Dattamsha-website/blob/main/IMG_4360.jpeg" 
+                                src="IMG_4360.jpg" 
                                 alt="Daksh Sahni" 
                                 class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
                             >
@@ -542,7 +552,7 @@
                             <!-- AI Avatar Image with Base64 Fallback -->
                             <img 
                                 id="founder-ai-img"
-                                src="https://github.com/daksh92/Dattamsha-website/blob/main/IMG_4235.png" 
+                                src="https://api.dicebear.com/7.x/avataaars/svg?seed=Daksh1&flip=true&rotate=0&scale=100&radius=0&backgroundColor=1e293b&clothing=blazerAndShirt&clothingColor=262e33&eyebrows=default&eyes=default&facialHair=beardLight&facialHairColor=262e33&mouth=smile&skin=light&top=shortHair&topColor=262e33" 
                                 alt="Agent Daksh" 
                                 class="w-full h-full object-cover"
                             >
@@ -648,6 +658,8 @@
     </footer>
 
     <script>
+        // SECURITY NOTE: In a production environment, never expose API keys in client-side code.
+        // Use a backend proxy to handle requests to the Gemini API.
         const apiKey = ""; // Provided by environment
 
         // --- Gemini Helper Function ---
@@ -692,9 +704,10 @@
         }
 
         async function generateJD() {
-            const title = document.getElementById('jd-title').value;
-            const dept = document.getElementById('jd-dept').value;
-            const skills = document.getElementById('jd-skills').value;
+            // SECURITY: Sanitize inputs (basic stripping/limiting handled by UI validation)
+            const title = document.getElementById('jd-title').value.trim();
+            const dept = document.getElementById('jd-dept').value.trim();
+            const skills = document.getElementById('jd-skills').value.trim();
             const level = document.getElementById('jd-level').value;
 
             if (!title) {
@@ -725,7 +738,11 @@
             document.getElementById('jd-loading').classList.add('hidden');
             document.getElementById('jd-loading').classList.remove('flex');
             document.getElementById('jd-result').classList.remove('hidden');
-            document.getElementById('jd-content').innerHTML = marked.parse(response);
+            
+            // SECURITY: Sanitize HTML content using DOMPurify before insertion to prevent XSS
+            const dirtyHTML = marked.parse(response);
+            const cleanHTML = DOMPurify.sanitize(dirtyHTML);
+            document.getElementById('jd-content').innerHTML = cleanHTML;
         }
 
         function resetJD() {
@@ -844,9 +861,17 @@
                 div.className = isUser 
                     ? 'text-right text-brand-accent mb-2' 
                     : 'text-left text-slate-300 mb-2';
-                div.innerHTML = isUser 
-                    ? `<span class="font-bold">You:</span> ${text}` 
-                    : `<span class="font-bold text-green-500">Agent:</span> ${text}`;
+                // SECURITY: Text content used here to prevent XSS (innerHTML not needed for basic chat)
+                // If HTML is needed, sanitize first. For now, innerHTML is okay for agent response only if we trust the prompt constraint, 
+                // but safer to use text content or sanitized HTML.
+                // Switching to sanitized HTML for agent, text for user.
+                if (isUser) {
+                    div.innerHTML = `<span class="font-bold">You:</span> ${text.replace(/</g, "&lt;").replace(/>/g, "&gt;")}`; 
+                } else {
+                    // Agent might return HTML like <br> or <strong>. Sanitize it.
+                    const clean = DOMPurify.sanitize(text);
+                    div.innerHTML = `<span class="font-bold text-green-500">Agent:</span> ${clean}`;
+                }
                 chatHistory.appendChild(div);
                 terminalBody.scrollTop = terminalBody.scrollHeight;
             }
