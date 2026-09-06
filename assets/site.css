@@ -144,3 +144,11 @@ ul.checks li::before{content:"";position:absolute;left:0;top:9px;width:10px;heig
 .u18{margin-top:36px}
 .u19{margin-top:44px}
 .u20{margin-top:48px}
+
+/* contact form: honeypot and status messages */
+.hp{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
+form{position:relative}
+.fs-msg{background:var(--t-tulsi);border-radius:10px;padding:14px 16px}
+.fs-msg h3{margin-bottom:4px}
+.fs-msg.fs-err{background:var(--t-manjistha,#f7e4e5);color:var(--ink)}
+button.btn[disabled]{opacity:.6;cursor:progress}
