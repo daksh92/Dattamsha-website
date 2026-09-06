@@ -12,8 +12,11 @@ document.addEventListener('DOMContentLoaded', function () {
   var f = document.querySelector('form[data-demo]');
   if (!f || !window.fetch || !window.FormData) return;
   var ok = f.querySelector('[data-fs-success]'), err = f.querySelector('[data-fs-error]'), btn = f.querySelector('button[type="submit"]');
+  var em = f.querySelector('#email'), rt = f.querySelector('input[name="_replyto"]');
+  if (em && rt) { em.addEventListener('input', function () { rt.value = em.value; }); }
   f.addEventListener('submit', function (e) {
     e.preventDefault();
+    if (em && rt) { rt.value = em.value; }
     err.hidden = true; err.textContent = '';
     btn.disabled = true; var label = btn.textContent; btn.textContent = 'Sending…';
     fetch(f.action, { method: 'POST', body: new FormData(f), headers: { 'Accept': 'application/json' } })
