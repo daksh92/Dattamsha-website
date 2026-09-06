@@ -15,6 +15,6 @@ document.addEventListener('DOMContentLoaded', function () {
     var d = new FormData(f), body = '';
     ['name','email','company','role','headcount','region','door'].forEach(function (k) { body += k.charAt(0).toUpperCase() + k.slice(1) + ': ' + (d.get(k) || '') + '\n'; });
     body += '\n' + (d.get('message') || '');
-    location.href = 'mailto:daksh@dataproducts.co.in?subject=' + encodeURIComponent('Demo request — ' + (d.get('company') || '')) + '&body=' + encodeURIComponent(body);
+    location.href = 'mailto:daksh@dattamsha.co.in?subject=' + encodeURIComponent('Demo request — ' + (d.get('company') || '')) + '&body=' + encodeURIComponent(body);
   });
 });
