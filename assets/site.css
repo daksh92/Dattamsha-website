@@ -28,7 +28,7 @@ p{margin:0 0 12px;max-width:62ch}
 .eyebrow{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3);font-weight:600;margin-bottom:12px}
 .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
 /* nav */
-.nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--surface) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
+.nav{position:sticky;top:0;z-index:20;background:var(--surface);background:color-mix(in srgb,var(--surface) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
 .nav .wrap{display:flex;align-items:center;gap:22px;height:60px}
 .brand{font-family:Newsreader,Georgia,serif;font-size:20px;text-decoration:none;display:flex;align-items:center;gap:10px}
 .brand i{width:26px;height:26px;border-radius:50%;border:1.5px solid var(--haldi);display:inline-grid;place-items:center}

@@ -1,0 +1,5 @@
+Contact: mailto:daksh@dataproducts.co.in
+Preferred-Languages: en
+Canonical: https://www.dattamsha.co.in/.well-known/security.txt
+Expires: 2027-09-06T00:00:00.000Z
+Policy: https://www.dattamsha.co.in/security.html
