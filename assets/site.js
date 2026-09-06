@@ -3,8 +3,14 @@
   if (window.top !== window.self) { try { window.top.location = window.self.location; } catch (e) { document.documentElement.style.display = 'none'; } }
 })();
 document.addEventListener('DOMContentLoaded', function () {
-  var m = document.querySelector('.nav .menu'), u = document.querySelector('.nav ul');
+  var m = document.querySelector('.nav .menu'), u = document.querySelector('.nav > .wrap > ul');
   if (m && u) { m.addEventListener('click', function () { u.classList.toggle('open'); m.setAttribute('aria-expanded', u.classList.contains('open') ? 'true' : 'false'); }); }
+  var sb = document.querySelector('.nav .signin-btn'), sl = sb && sb.parentNode;
+  if (sb) {
+    sb.addEventListener('click', function () { var o = sl.classList.toggle('open'); sb.setAttribute('aria-expanded', o ? 'true' : 'false'); });
+    document.addEventListener('click', function (e) { if (!sl.contains(e.target)) { sl.classList.remove('open'); sb.setAttribute('aria-expanded', 'false'); } });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { sl.classList.remove('open'); sb.setAttribute('aria-expanded', 'false'); } });
+  }
 
   // Demo-request form → Formspree. Submitted with fetch so the visitor stays on the page;
   // if fetch is unavailable or the network fails, the browser's native POST to the same
