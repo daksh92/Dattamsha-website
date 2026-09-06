@@ -121,3 +121,26 @@ ul.checks{padding-left:0;list-style:none;margin:12px 0 0}
 ul.checks li{padding-left:22px;position:relative;margin:6px 0;color:var(--ink-2)}
 ul.checks li::before{content:"";position:absolute;left:0;top:9px;width:10px;height:10px;border-radius:50%;background:var(--haldi)}
 @media (prefers-reduced-motion:reduce){.stage{transition:none}html{scroll-behavior:auto}}
+
+/* utilities generated from former inline styles */
+.u00{color:var(--haldi-deep)}
+.u01{color:var(--ink-3)}
+.u02{color:var(--ink-4)}
+.u03{color:var(--tulsi)}
+.u04{display:flex;gap:12px}
+.u05{flex:1}
+.u06{font-size:18px}
+.u07{font-size:22px;font-weight:500;margin-top:6px}
+.u08{font-size:30px;font-weight:500}
+.u09{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.u10{margin-top:10px;max-width:34ch}
+.u11{margin-top:14px}
+.u12{margin-top:14px;font-size:12px}
+.u13{margin-top:18px}
+.u14{margin-top:18px;color:var(--ink-3)}
+.u15{margin-top:22px;color:var(--ink-3)}
+.u16{margin-top:26px}
+.u17{margin-top:28px}
+.u18{margin-top:36px}
+.u19{margin-top:44px}
+.u20{margin-top:48px}
