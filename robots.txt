@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.dattamsha.co.in/sitemap.xml
