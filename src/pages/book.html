@@ -1,0 +1,32 @@
+<section class="section book-page">
+  <div class="wrap">
+    <div class="row">
+      <div class="book-intro">
+        <p class="eyebrow">Book · Thirty minutes</p>
+        <h1 class="display-1 book-title">Bring your Monday question. We’ll work it in 30 minutes.</h1>
+        <p class="lede book-lede">No deck. You bring one real question from your organisation; we show how the function would answer it, what data it needs, and what the first 90 days look like.</p>
+        <dl class="rows rows--end book-rows">
+          <div><dt>Who should come</dt><dd>The CHRO or the HR digitisation head, and whoever owns the HRMS. Three people at most.</dd></div>
+          <div><dt>What to bring</dt><dd>One question you have wanted answered for a while, and a rough headcount.</dd></div>
+          <div><dt>What you leave with</dt><dd>A written note within a day: the answer we would give, the data it needs, and a number for the engagement.</dd></div>
+        </dl>
+      </div>
+      <div class="card book-card">
+        <div class="motif motif--phala motif--16" aria-hidden="true"></div>
+        <div class="book-card__body">
+          <div class="book-cal">
+            <a class="btn btn--kesar" href="{{booking_url}}" rel="noopener noreferrer">Pick a time</a>
+          </div>
+          <form class="book-form" action="mailto:{{contact_email}}" method="get" aria-labelledby="book-form-title">
+            <h2 class="book-form__title" id="book-form-title">Or leave your question</h2>
+            <input type="hidden" name="subject" value="{{question_subject}}">
+            <label class="book-form__label" for="book-question">Your question</label>
+            <textarea class="book-form__field" id="book-question" name="body" rows="3" required maxlength="1500" placeholder="e.g. Why are riders in Pune leaving in their first 30 days?"></textarea>
+            <p class="book-form__privacy">We use your email and question only to arrange the session. Kept for 90 days after it, then deleted. Reply to any email to withdraw. <a href="/privacy/">Privacy notice</a>.</p>
+            <button class="btn btn--kesar" type="submit">Send the question</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

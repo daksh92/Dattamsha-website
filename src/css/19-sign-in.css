@@ -1,0 +1,21 @@
+/* Sign in: links out to each product's own sign-in page. */
+.signin-page > .wrap { padding-top: 56px; }
+.signin-title { max-width: 700px; }
+.signin-lede { margin-top: 22px; }
+.signin-list {
+  list-style: none; margin-top: 36px;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px;
+}
+.signin-card {
+  display: flex; flex-direction: column; height: 100%;
+  border-radius: var(--radius-lg); overflow: hidden; text-decoration: none;
+}
+.signin-card:hover { color: var(--ink); }
+.signin-card__body { display: flex; flex-direction: column; gap: 5px; flex: 1; padding: 14px 16px 16px; }
+.signin-card__verb { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; }
+.signin-card__name { font-family: var(--font-display); font-size: 22px; line-height: 1.1; color: var(--ink); }
+.signin-card__deva { font-size: 13px; color: var(--text); }
+.signin-card__line { font-size: 13px; line-height: 1.45; color: var(--text); }
+.signin-card__go { margin-top: auto; padding-top: 10px; font-size: 13px; font-weight: 600; }
+.signin-card:hover .signin-card__go { text-decoration: underline; }
+.signin-note { margin-top: 28px; font-size: 15px; color: var(--text); }
