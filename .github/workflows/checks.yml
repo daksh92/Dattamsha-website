@@ -1,0 +1,50 @@
+# Checks only: this workflow never deploys. GitHub Pages still serves main directly.
+name: Site checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: "20"
+          cache: npm
+      - run: npm ci
+      # Every check step runs even when an earlier one fails, so one red step never hides the
+      # others. The build check runs last: it fails on purpose while a [PLACEHOLDER] is still
+      # showing on a page (values only the site owner can supply; see README "Checks").
+      - name: HTML validation
+        if: success() || failure()
+        run: npx html-validate $(find . -name '*.html' -not -path './node_modules/*' -not -path './tools/*' -not -path './src/*')
+      - name: Internal links and fragments
+        if: success() || failure()
+        uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
+        with:
+          lycheeVersion: v0.24.2
+          args: --offline --no-progress --include-fragments --index-files index.html --exclude '\[[A-Z0-9 %]+\]' --root-dir ${{ github.workspace }} --exclude-path node_modules --exclude-path tools --exclude-path src '**/*.html'
+          fail: true
+      - name: Browser checks (axe with and without JS, CSP, same-origin requests, redirects)
+        if: success() || failure()
+        run: |
+          npx playwright install --with-deps chromium webkit
+          python3 -m http.server 8000 >/dev/null 2>&1 &
+          sleep 1
+          node tools/checks/site_checks.mjs
+      - name: Build check (generated files current, no client names, no placeholders showing)
+        if: success() || failure()
+        run: python3 tools/build.py --check
