@@ -192,6 +192,8 @@ pre {
   padding-top: 18px; padding-bottom: 18px;
 }
 .brand { display: flex; align-items: baseline; gap: 8px; text-decoration: none; }
+/* The owl mark (white on logo-cyan, as in the lockup), 40px: the design system's minimum. */
+.brand__mark { display: block; align-self: center; width: 40px; height: 40px; margin-right: 4px; }
 .brand__name { font-family: var(--font-display); font-size: 26px; color: var(--ink); }
 /* "DATA LABS" is part of the logo lockup, in logo-cyan. WCAG 1.4.3 exempts logotypes from
    contrast minimums, so it is drawn as generated content (the link's accessible name,
@@ -217,6 +219,15 @@ pre {
 
 /* Below 960px the nav collapses behind the Menu button. Without JavaScript,
    assets/css/no-js.css (loaded in <noscript>) shows the links instead. */
+/* Phones: keep the owl at its 40px minimum and the Menu button on the same line. */
+@media (max-width: 479px) {
+  .site-header__bar { gap: 12px; }
+  .brand { gap: 6px; }
+  .brand__mark { margin-right: 0; }
+  .brand__name { font-size: 22px; }
+  .brand__labs { font-size: 10px; letter-spacing: 1.5px; }
+}
+
 @media (max-width: 959px) {
   .menu-toggle { display: inline-block; }
   .site-menu { display: none; }
@@ -882,7 +893,7 @@ pre {
 .abt-hero__title { max-width: 800px; }
 .abt-hero__lede { margin-top: 22px; max-width: 680px; }
 
-/* Founders and team: three cards with a motif band on top. */
+/* Founder and team: cards with a motif band on top. */
 .abt-people { display: flex; flex-wrap: wrap; gap: 32px; }
 .abt-person { flex: 1 1 300px; min-width: 0; border-radius: var(--radius-lg); overflow: hidden; }
 /* Design is content-box: the 1px border sits outside the 300px basis. */
