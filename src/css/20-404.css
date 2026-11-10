@@ -1,0 +1,7 @@
+/* Not found */
+.nf-page > .wrap { padding-top: 56px; }
+.nf-lede { margin-top: 22px; }
+.nf-actions { margin-top: 28px; }
+.nf-links { margin-top: 40px; max-width: 420px; }
+.nf-links .ruled { border-bottom: 1px solid var(--rule); }
+.nf-links a { font-size: 17px; }

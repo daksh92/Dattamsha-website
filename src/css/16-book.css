@@ -1,0 +1,32 @@
+/* Book a working session */
+.book-page > .wrap { padding-top: 56px; }
+.book-intro { flex: 1 1 420px; }
+.book-title { max-width: 600px; }
+.book-lede { margin-top: 22px; max-width: 680px; }
+.book-rows { margin-top: 28px; }
+
+/* Design is content-box with a 1px border: basis 380 + 2, max-width 520 + 2. */
+.book-card { flex: 1 1 382px; max-width: 522px; }
+/* The design tiles this band as an SVG pattern at scale(0.33): 15.84px tiles, repeating. */
+.book-card__body { padding: 22px 24px 26px; }
+
+/* Stands where the design shows the calendar embed, until cal.dattamsha.co.in exists. */
+.book-cal {
+  background: var(--surface); border: 1px dashed var(--rule); border-radius: var(--radius-md);
+  padding: 25px 20px; text-align: center; /* 94px tall, as the designed embed box */
+}
+
+.book-form__title {
+  margin: 20px 0 10px;
+  font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--phala-deep);
+}
+.book-form__label { display: block; margin-bottom: 4px; font-size: 13px; color: var(--text); }
+.book-form__field {
+  display: block; width: 100%; margin-bottom: 12px;
+  border: 1px solid var(--rule); border-radius: var(--radius-md);
+  padding: 10px 12px; font-size: 15px; background: var(--ground); color: var(--ink);
+  resize: vertical;
+}
+.book-form__field::placeholder { color: var(--text-muted); opacity: 1; }
+.book-form__privacy { margin: 0 0 14px; font-size: 12px; line-height: 1.5; color: var(--text-muted); }

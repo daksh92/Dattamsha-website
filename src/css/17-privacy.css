@@ -1,0 +1,7 @@
+/* Privacy notice */
+.prv-page > .wrap { padding-top: 56px; }
+.prv-title { max-width: 700px; }
+.prv-lede { margin-top: 22px; max-width: 680px; }
+.prv-rows { margin-top: 28px; max-width: 860px; }
+.prv-rows dt { color: var(--sangam-deep); }
+.prv-updated { margin-top: 16px; font-size: 13px; color: var(--text-muted); }
