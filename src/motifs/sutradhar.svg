@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="384" height="48" viewBox="0 0 384 48">
+<title>Bandhani · tie-dye dot clusters — Dattamsha Sutradhar motif (Rajasthani bandhani)</title>
+<defs><pattern id="sutradhar-bandhani" width="48" height="48" patternUnits="userSpaceOnUse">
+<circle fill="#c2185b" cx="12" cy="7" r="2.4"/><circle fill="#c2185b" cx="7" cy="12" r="2.4"/><circle fill="#c2185b" cx="17" cy="12" r="2.4"/><circle fill="#c2185b" cx="12" cy="17" r="2.4"/>
+<circle fill="#c2185b" cx="36" cy="31" r="2.4"/><circle fill="#c2185b" cx="31" cy="36" r="2.4"/><circle fill="#c2185b" cx="41" cy="36" r="2.4"/><circle fill="#c2185b" cx="36" cy="41" r="2.4"/>
+<circle fill="#c2185b" fill-opacity="0.45" cx="36" cy="12" r="2"/><circle fill="#c2185b" fill-opacity="0.45" cx="12" cy="36" r="2"/></pattern></defs>
+<rect width="384" height="48" fill="#f0cacd"/>
+<rect width="384" height="48" fill="url(#sutradhar-bandhani)"/>
+</svg>

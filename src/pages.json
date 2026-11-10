@@ -1,0 +1,96 @@
+{
+  "pages": [
+    {
+      "path": "/",
+      "src": "home.html",
+      "nav": "/",
+      "title": "Dattamsha · the people analytics team you were going to hire",
+      "description": "We build and run your people analytics function: the data layer, the metrics, the analysts and the AI agents. Live in 90 days, inside your own cloud.",
+      "scripts": [
+        "/assets/js/home.js"
+      ],
+      "extra_head": "partials/home-jsonld.html"
+    },
+    {
+      "path": "/how-we-work/",
+      "src": "how-we-work.html",
+      "title": "How we work · Dattamsha",
+      "description": "Ninety days from read access to a read-out in rupees. Five steps. At each one, what we do and the little you give."
+    },
+    {
+      "path": "/platform/",
+      "src": "platform.html",
+      "title": "Anvaya platform · Dattamsha",
+      "description": "One data layer, a loop of agents, each named for what it does. Everything runs in your cloud. Only masked sentences reach a model."
+    },
+    {
+      "path": "/clients/",
+      "src": "clients.html",
+      "title": "Clients · Dattamsha",
+      "description": "Five enterprises. Each one started at a different door: telecom, quick commerce, fintech, internet services and healthcare."
+    },
+    {
+      "path": "/trust/",
+      "src": "trust.html",
+      "title": "Trust · Dattamsha",
+      "description": "Your employee data never reaches us. What the architecture covers, and what stays with you as the data fiduciary. Written for your security teams to test."
+    },
+    {
+      "path": "/about/",
+      "src": "about.html",
+      "title": "About · Dattamsha",
+      "description": "Founded in Gurugram by two people who had run people analytics and HR technology inside Indian enterprises."
+    },
+    {
+      "path": "/book/",
+      "src": "book.html",
+      "scripts": [
+        "/assets/js/book.js"
+      ],
+      "title": "Book a working session · Dattamsha",
+      "description": "Bring your Monday question. We’ll work it in 30 minutes: how the function would answer it, what data it needs, and what the first 90 days look like."
+    },
+    {
+      "path": "/privacy/",
+      "src": "privacy.html",
+      "title": "Privacy notice · Dattamsha",
+      "description": "What this website collects, and why. It covers dattamsha.co.in only; deployments of Anvaya inside a client’s cloud are covered by that client’s notice."
+    },
+    {
+      "path": "/monday-brief/",
+      "src": "monday-brief.html",
+      "title": "Sample Monday brief · Dattamsha",
+      "description": "A sample Monday brief from Birbal for an HRBP: one thing needs your approval this week, two are being watched, one worked. Illustrative data."
+    },
+    {
+      "path": "/sign-in/",
+      "src": "sign-in.html",
+      "title": "Sign in · Dattamsha",
+      "description": "Sign in to Gargi, Sutradhar or Margdarshak. Each one opens its own sign-in page."
+    },
+    {
+      "path": "/404.html",
+      "src": "404.html",
+      "title": "Page not found · Dattamsha",
+      "description": "This page isn’t here. It may have moved when we rebuilt the site.",
+      "canonical": false,
+      "sitemap": false,
+      "robots": "noindex"
+    }
+  ],
+  "redirects": {
+    "/platform.html": "/platform/",
+    "/about.html": "/about/",
+    "/security.html": "/trust/",
+    "/contact.html": "/book/",
+    "/pricing.html": "/how-we-work/",
+    "/products/sangam.html": "/platform/#sangam",
+    "/products/sutradhar.html": "/platform/#sutradhar",
+    "/products/gargi.html": "/platform/#gargi",
+    "/products/margdarshak.html": "/platform/#margdarshak",
+    "/products/phala.html": "/platform/#phala",
+    "/regions/india.html": "/trust/",
+    "/regions/malaysia.html": "/",
+    "/regions/uae.html": "/"
+  }
+}

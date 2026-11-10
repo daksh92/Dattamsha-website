@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="384" height="48" viewBox="0 0 384 48">
+<title>Lahar · river confluence — Dattamsha Sangam motif (Madhubani river border)</title>
+<defs><pattern id="sangam-lahar" width="96" height="48" patternUnits="userSpaceOnUse">
+<path stroke="#0e7c86" fill="none" stroke-width="3" stroke-linecap="round" d="M0,17 C16,5 32,5 48,17 S80,29 96,17"/>
+<path stroke="#0e7c86" stroke-opacity="0.45" fill="none" stroke-width="3" stroke-linecap="round" d="M0,31 C16,43 32,43 48,31 S80,19 96,31"/>
+<circle fill="#0e7c86" cx="24" cy="24" r="2.5"/><circle fill="#0e7c86" cx="72" cy="24" r="2.5"/></pattern></defs>
+<rect width="384" height="48" fill="#ccded6"/>
+<rect width="384" height="48" fill="url(#sangam-lahar)"/>
+</svg>
