@@ -1,0 +1,57 @@
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--text);
+  font-family: var(--font-text);
+  font-size: 16px;
+  /* The design sets line-height wherever text runs long; elsewhere it is the browser default. */
+  line-height: normal;
+  overflow-wrap: break-word;
+}
+
+[hidden] { display: none !important; }
+
+h1, h2, h3, h4, p, ul, ol, dl, dd, figure, blockquote, pre { margin: 0; }
+ul, ol { padding: 0; }
+img, svg { max-width: 100%; }
+button, input, textarea, select { font: inherit; }
+
+a { color: var(--sangam-deep); }
+a:hover { color: var(--ink); }
+
+:focus-visible { outline: 3px solid var(--margdarshak); outline-offset: 2px; }
+main:focus { outline: none; }
+
+pre {
+  white-space: pre-wrap;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12.5px;
+  line-height: 1.55;
+}
+
+/* Devanagari (Sanskrit product names, Hindi phrases). Always carries lang="sa" or lang="hi". */
+.deva { font-family: var(--font-devanagari); font-weight: 400; }
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0; border: 0;
+  overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.skip-link {
+  position: absolute; left: 16px; top: -100px; z-index: 100;
+  background: var(--ink); color: var(--ground);
+  padding: 10px 16px; border-radius: var(--radius-md);
+  font-weight: 600; text-decoration: none;
+}
+.skip-link:focus { top: 12px; color: var(--ground); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+}
