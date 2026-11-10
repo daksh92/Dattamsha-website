@@ -60,7 +60,8 @@ assets/js/site.js      Mobile menu, frame-busting (every page)
 assets/js/home.js      The Ask Gargi and Birbal panels on the home page (scripted demo)
 assets/js/book.js      Book page: builds the "leave your question" mail link
 assets/fonts/          Subset fonts (SIL OFL); rebuild with tools/subset_fonts.py
-assets/img/            Share image and touch icon; rebuild with node tools/share/render.mjs
+assets/img/            Share image (node tools/share/render.mjs) and owl icons
+favicon.ico            Owl favicon; icons rebuild with python3 -I tools/icons/make_icons.py
 ```
 
 ## Checks
@@ -143,7 +144,7 @@ When the site moves to Caddy, publish **only** these paths (for example
 the working copy, which holds the untracked `_review/` design files):
 
 ```
-index.html  404.html  favicon.svg  robots.txt  sitemap.xml  CNAME (optional)
+index.html  404.html  favicon.ico  robots.txt  sitemap.xml  CNAME (optional)
 about/  book/  clients/  how-we-work/  monday-brief/  platform/  privacy/  sign-in/  trust/
 about.html  contact.html  platform.html  pricing.html  security.html  products/  regions/
 assets/  .well-known/
