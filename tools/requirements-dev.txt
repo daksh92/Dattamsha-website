@@ -1,0 +1,5 @@
+# Dev-only: the pixel-comparison scripts in tools/checks (diff_truth.py, diff_map.py,
+# compare.py, compare_target.py). Not needed to build the site or for CI.
+#   python3 -m pip install -r tools/requirements-dev.txt
+numpy==1.26.4
+Pillow==10.4.0
