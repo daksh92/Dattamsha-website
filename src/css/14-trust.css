@@ -1,0 +1,27 @@
+/* Trust page */
+.tru-hero > .wrap { padding-top: 56px; padding-bottom: 32px; }
+.tru-hero__title { max-width: 800px; }
+.tru-hero__lede { margin-top: 22px; max-width: 680px; }
+
+.tru-h2 { max-width: 760px; margin-bottom: 12px; }
+
+.tru-split__covers { flex: 1 1 440px; }
+.tru-split__yours { flex: 1 1 360px; }
+
+.tru-rows--sangam dt { color: var(--sangam-deep); }
+.tru-rows--sandesh dt { color: var(--sandesh-deep); }
+.tru-rows--margdarshak dt { color: var(--margdarshak-deep); }
+
+.tru-note { margin-top: 16px; font-size: 13px; line-height: 1.5; color: var(--text-muted); }
+.tru-practices { max-width: 860px; }
+
+/* Closing call to action: a phala-tint strip with the keri band. */
+
+@media (max-width: 600px) {
+  .tru-hero > .wrap { padding-top: 40px; padding-bottom: 16px; }
+}
+
+/* The design leaves these at the browser's normal line height. */
+.tru-rows--sangam dt, .tru-rows--sandesh dt, .tru-rows--margdarshak dt { line-height: normal; }
+
+/* The design's keri pattern is the 48px tile at scale(0.46): 22.08px, not 22px. */

@@ -1,0 +1,40 @@
+/* Clients page */
+.cli-hero > .wrap { padding-top: 56px; padding-bottom: 24px; }
+.cli-hero__title { max-width: 800px; }
+.cli-hero__lede { margin-top: 22px; max-width: 680px; }
+
+.cli-stories > .wrap { padding-top: 16px; }
+
+/* One story: tinted side panel on the left, four lines on the right. */
+.cli-story {
+  display: flex; flex-wrap: wrap;
+  margin-top: 24px;
+  background: var(--surface-raised); border: 1px solid var(--rule);
+  border-radius: var(--radius-lg); overflow: hidden;
+}
+.cli-story__side { flex: 0 0 280px; display: flex; flex-direction: column; }
+/* Design tiles are scale(0.42) of 48px = 20.16px, not the band height. */
+.cli-story__head { flex: 1; display: flex; flex-direction: column; gap: 6px; padding: 22px 24px 26px; }
+.cli-story__sector { font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; }
+.cli-story__name { font-family: var(--font-display); font-weight: 400; font-size: 26px; line-height: 1.1; color: var(--ink); }
+.cli-story__rows { flex: 1 1 400px; min-width: 0; padding: 24px 28px; }
+
+.cli-story--sangam .rows dt { color: var(--sangam-deep); }
+.cli-story--gargi .rows dt { color: var(--gargi-deep); }
+.cli-story--sutradhar .rows dt { color: var(--sutradhar-deep); }
+.cli-story--margdarshak .rows dt { color: var(--margdarshak-deep); }
+.cli-story--phala .rows dt { color: var(--phala-deep); }
+
+
+/* Closing call to action: a phala-tint strip with the keri band (tile scale(0.46) = 22.08px). */
+
+@media (max-width: 720px) {
+  .cli-story__side { flex-basis: 100%; }
+  .cli-story__rows { padding: 16px 20px 20px; }
+}
+@media (max-width: 600px) {
+  .cli-hero > .wrap { padding-top: 40px; padding-bottom: 16px; }
+}
+
+/* The design leaves these at the browser's normal line height. */
+.cli-story__sector, .cli-story__rows dt { line-height: normal; }
