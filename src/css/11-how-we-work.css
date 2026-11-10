@@ -1,0 +1,56 @@
+/* How we work (/how-we-work/) */
+
+.hww-hero > .wrap { padding-top: 56px; padding-bottom: 24px; }
+.hww-hero__title { max-width: 800px; }
+.hww-hero__lede { margin-top: 22px; max-width: 680px; }
+
+/* Five steps: when + name, what we do, what you give. */
+.hww-steps-section > .wrap { padding-top: 24px; padding-bottom: 64px; }
+.hww-steps { list-style: none; border-bottom: 1px solid var(--rule); }
+.hww-step {
+  display: flex; flex-wrap: wrap; gap: 24px;
+  padding: 28px 0; border-top: 1px solid var(--rule);
+}
+.hww-step > * { min-width: 0; }
+.hww-step__head { flex: 0 0 200px; }
+.hww-step__when {
+  display: block;
+  font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+}
+.hww-step__name {
+  margin-top: 4px;
+  font-family: var(--font-display); font-weight: 400; font-size: 30px; line-height: normal;
+  color: var(--ink);
+}
+.hww-step__do { flex: 1 1 320px; }
+.hww-label {
+  margin-bottom: 6px;
+  font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+}
+.hww-step__text { font-size: 16px; line-height: 1.55; color: var(--text); }
+/* Design boxes are content-box: 260px + 36px padding. */
+.hww-step__give { flex: 1 1 296px; border-radius: var(--radius-lg); padding: 16px 18px; }
+.hww-step__give-text { font-size: 15px; line-height: 1.5; color: var(--ink); }
+
+/* The team */
+.hww-team__title { margin-bottom: 28px; max-width: 760px; }
+.hww-team { display: flex; flex-wrap: wrap; gap: 32px; }
+.hww-team__item { flex: 1 1 280px; min-width: 0; border-top: 1px solid var(--rule); padding-top: 14px; }
+.hww-team__name { font-family: var(--font-display); font-weight: 400; font-size: 24px; line-height: normal; color: var(--ink); }
+.hww-team__text { margin-top: 8px; font-size: 15px; line-height: 1.55; color: var(--text); }
+
+/* The week */
+.hww-week { flex: 1 1 400px; }
+.hww-week__title { margin-bottom: 20px; max-width: 760px; }
+.hww-week__rows dt { color: var(--margdarshak-deep); }
+.hww-week__more { margin-top: 20px; font-size: 15px; }
+
+/* Pricing call-out: phala tint card with a motif band, text and a button. */
+.hww-pricing { flex: 1 1 340px; align-self: center; }
+
+@media (max-width: 600px) {
+  .hww-step__head { flex-basis: 100%; }
+}
+
+/* The design leaves line-height at "normal" wherever it does not set one. */
+.hww-step__when, .hww-label, .hww-week__more { line-height: normal; }

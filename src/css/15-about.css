@@ -1,0 +1,53 @@
+/* About page */
+.abt-hero > .wrap { padding-top: 56px; padding-bottom: 32px; }
+.abt-hero__title { max-width: 800px; }
+.abt-hero__lede { margin-top: 22px; max-width: 680px; }
+
+/* Founders and team: three cards with a motif band on top. */
+.abt-people { display: flex; flex-wrap: wrap; gap: 32px; }
+.abt-person { flex: 1 1 300px; min-width: 0; border-radius: var(--radius-lg); overflow: hidden; }
+/* Design is content-box: the 1px border sits outside the 300px basis. */
+.abt-person.card { flex-basis: 302px; }
+.abt-person__body { padding: 22px 24px; }
+.abt-person__name { font-family: var(--font-display); font-weight: 400; font-size: 26px; color: var(--ink); }
+.abt-person__role {
+  margin: 2px 0 12px;
+  font-size: 13px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+}
+.abt-person__text { font-size: 15px; line-height: 1.55; color: var(--text); }
+.abt-person__text.t-ink { color: var(--ink); }
+
+.abt-why { flex: 1 1 420px; }
+.abt-why__title { max-width: 760px; margin-bottom: 16px; }
+.abt-why__text { font-size: 17px; line-height: 1.6; color: var(--text); max-width: 600px; }
+
+.abt-names { flex: 1 1 380px; }
+.abt-names__title { max-width: 760px; margin-bottom: 12px; }
+.abt-names__text { margin-bottom: 18px; font-size: 16px; line-height: 1.6; color: var(--text); max-width: 600px; }
+
+/* Name · Devanagari · meaning, one row each. */
+.abt-glossary { border-bottom: 1px solid var(--rule); }
+.abt-glossary > div { display: flex; gap: 12px; align-items: baseline; padding: 10px 0; border-top: 1px solid var(--rule); }
+.abt-glossary dt { flex: 0 0 150px; font-family: var(--font-display); font-size: 20px; color: var(--ink); }
+.abt-glossary__deva { flex: 0 0 120px; font-size: 16px; color: var(--text-muted); }
+.abt-glossary dd:last-child { font-size: 15px; color: var(--text); }
+
+.abt-note { margin-top: 12px; font-size: 13px; color: var(--text-muted); }
+
+.abt-company { flex: 1 1 360px; min-width: 0; }
+.abt-company__rows { margin-top: 12px; }
+.abt-company__rows dt { color: var(--margdarshak-deep); }
+
+/* Call to action: a phala-tint strip with the keri band. */
+
+@media (max-width: 600px) {
+  .abt-hero > .wrap { padding-top: 40px; padding-bottom: 16px; }
+  .abt-glossary > div { flex-wrap: wrap; gap: 4px 12px; }
+  .abt-glossary dt { flex-basis: auto; }
+  .abt-glossary__deva { flex-basis: auto; }
+  .abt-glossary dd:last-child { flex-basis: 100%; }
+}
+
+/* The design leaves these at the browser's normal line height. */
+.abt-person__name, .abt-person__role, .abt-glossary dt, .abt-glossary dd, .abt-note, .abt-company__rows dt { line-height: normal; }
+

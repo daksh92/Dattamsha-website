@@ -1,0 +1,102 @@
+/* Platform (/platform/) */
+
+.plat-hero > .wrap { padding-top: 56px; padding-bottom: 32px; }
+.plat-hero__title { max-width: 800px; }
+.plat-hero__lede { margin-top: 22px; max-width: 680px; }
+/* The design sets this word in the eyebrow's own sans stack (weight and all), so the
+   Devanagari comes from the system fallback, not the serif. */
+
+/* The design dims secondary text on pigment to 85%. That keeps 4.5:1 only on the
+   darker or -on-ink blocks, so the dimming applies just there; elsewhere the text
+   stays at full strength for contrast. */
+.block-margdarshak .plat-dim,
+.block-phala .plat-dim,
+.block-darshan .plat-dim,
+.plat-arch__node--systems .plat-dim { opacity: .85; }
+
+/* ---- Architecture ---- */
+.plat-arch-section > .wrap { padding-top: 56px; padding-bottom: 56px; }
+.plat-arch__title { margin-bottom: 24px; max-width: 760px; }
+.plat-arch {
+  container: plat-arch / inline-size;
+  margin: 0;
+  border: 2px solid var(--margdarshak); border-radius: var(--radius-lg);
+  padding: 20px 22px; background: var(--surface-raised);
+}
+.plat-arch__label {
+  margin-bottom: 14px;
+  font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--margdarshak-deep);
+}
+.plat-arch__flow { display: flex; flex-wrap: wrap; gap: 12px; list-style: none; }
+/* Bases include padding: the design's boxes are content-box. */
+.plat-arch__node { flex: 1 1 208px; min-width: 0; border-radius: var(--radius-md); padding: 12px 14px; }
+.plat-arch__node--systems { background: var(--surface); color: var(--ink); }
+.plat-arch__name { font-size: 14px; font-weight: 600; }
+.plat-arch__what { margin-top: 4px; font-size: 12px; line-height: 1.45; }
+/* DM Sans as the design loads it has no arrow glyph; the design's arrow is the
+   next font in the text stack. */
+.plat-arch__arrow {
+  align-self: center; color: var(--text-muted);
+  font-family: "Helvetica Neue", Arial, sans-serif; line-height: 21px;
+}
+.plat-arch__boundary { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; align-items: center; }
+.plat-arch__boundary-label { font-size: 12px; color: var(--text-muted); }
+.plat-arch__chip {
+  font-size: 12px; color: var(--ink); background: var(--phala-tint);
+  padding: 4px 10px; border-radius: var(--radius-pill);
+}
+.plat-arch__note { margin-top: 12px; font-size: 13px; color: var(--text-muted); }
+
+/* ---- Modules: pigment identity panel left, description right ---- */
+.plat-mods-section > .wrap { padding-top: 56px; }
+.plat-mods__title { max-width: 760px; }
+.plat-mod {
+  container: plat-mod / inline-size;
+  display: flex; flex-wrap: wrap;
+  margin-top: 24px;
+  border: 1px solid var(--rule); border-radius: var(--radius-lg); overflow: hidden;
+  scroll-margin-top: 24px;
+}
+.plat-mod__id { flex: 0 0 300px; display: flex; flex-direction: column; }
+.plat-mod__id-body { padding: 22px 24px 26px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.plat-mod__verb { font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; }
+.plat-mod__name { font-family: var(--font-display); font-weight: 400; font-size: 32px; line-height: 1.05; }
+/* The design sets this whole line in Noto Serif Devanagari; its Latin part (the
+   separators and Latin words) uses Noto Serif Devanagari's Latin subset, as in the artifact. */
+.plat-mod__deva { font-family: var(--font-devanagari); font-size: 15px; }
+.plat-mod__role {
+  margin-top: auto; padding-top: 12px; border-top: 1px solid currentColor;
+  font-size: 14px; font-weight: 600;
+}
+.plat-mod__body { flex: 1 1 456px; min-width: 0; background: var(--surface-raised); padding: 24px 28px; }
+.plat-mod__text { font-size: 16px; line-height: 1.6; color: var(--text); }
+.plat-mod__list { margin-top: 14px; padding-left: 18px; }
+.plat-mod__list li { margin-bottom: 6px; font-size: 14px; line-height: 1.5; color: var(--text); }
+.plat-mods__more { margin-top: 16px; font-size: 13px; color: var(--text-muted); }
+
+/* ---- Closing call-out ---- */
+
+/* Container queries rather than viewport breakpoints, so the switch happens exactly where
+   the content stops fitting, with or without a scrollbar eating into the viewport. */
+/* The panel (300px) and body (456px) no longer sit side by side: stack them at full
+   width instead of leaving an empty block beside the panel. */
+@container plat-mod (max-width: 755.98px) {
+  .plat-mod__id { flex-basis: 100%; }
+}
+/* The flow (four 208px nodes, three arrows) no longer fits on one row: list it
+   vertically instead of leaving an arrow dangling at the end of a row. A few pixels of
+   slack cover arrow glyphs that are wider in other system fonts. */
+@container plat-arch (max-width: 959.98px) {
+  .plat-arch__flow { flex-direction: column; }
+  .plat-arch__node { flex-basis: auto; }
+  .plat-arch__arrow { align-self: flex-start; padding-left: 14px; transform: rotate(90deg); }
+}
+@media (max-width: 600px) {
+  .plat-mod__body { padding: 20px; }
+  .plat-arch { padding: 16px; }
+}
+
+/* The design leaves line-height at "normal" wherever it does not set one. */
+.plat-arch__label, .plat-arch__name, .plat-arch__boundary-label, .plat-arch__chip,
+.plat-arch__note, .plat-mod__verb, .plat-mod__deva, .plat-mod__role, .plat-mods__more { line-height: normal; }
