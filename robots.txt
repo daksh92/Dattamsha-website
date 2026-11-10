@@ -1,3 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /src/
+Disallow: /tools/
+Disallow: /.github/
+
 Sitemap: https://www.dattamsha.co.in/sitemap.xml
