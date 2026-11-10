@@ -1,4 +1,4 @@
-"""Make the favicon and touch icons from the Dattamsha owl mark.
+"""Make the favicon, touch icons and header logo from the Dattamsha owl mark.
 
     python3 -I tools/icons/make_icons.py     (needs Pillow: tools/requirements-dev.txt)
 
@@ -41,12 +41,14 @@ def main():
     sizes[48].save(ROOT / "favicon.ico", sizes=[(16, 16), (32, 32), (48, 48)],
                    append_images=[sizes[16], sizes[32]])
     icon(192, 18, 36).save(out / "icon-192.png", optimize=True)
+    # Header logo: shown at 40 x 40 CSS px next to the wordmark; 120 px for sharp 3x screens.
+    icon(120, 11, 22).save(out / "owl-mark.png", optimize=True)
     # iOS rounds the corners itself and wants an opaque square.
     touch = icon(180, 18, 0)
     flat = Image.new("RGB", touch.size, CYAN[:3])
     flat.paste(touch, (0, 0), touch)
     flat.save(out / "apple-touch-icon.png", optimize=True)
-    for p in (ROOT / "favicon.ico", out / "icon-192.png", out / "apple-touch-icon.png"):
+    for p in (ROOT / "favicon.ico", out / "icon-192.png", out / "apple-touch-icon.png", out / "owl-mark.png"):
         print(f"{p.relative_to(ROOT)}  {p.stat().st_size / 1024:.1f} KB")
 
 
