@@ -3,7 +3,7 @@
 .abt-hero__title { max-width: 800px; }
 .abt-hero__lede { margin-top: 22px; max-width: 680px; }
 
-/* Founders and team: three cards with a motif band on top. */
+/* Founder and team: cards with a motif band on top. */
 .abt-people { display: flex; flex-wrap: wrap; gap: 32px; }
 .abt-person { flex: 1 1 300px; min-width: 0; border-radius: var(--radius-lg); overflow: hidden; }
 /* Design is content-box: the 1px border sits outside the 300px basis. */
