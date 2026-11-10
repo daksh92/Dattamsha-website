@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="384" height="48" viewBox="0 0 384 48">
+<title>Jaali · eight-point star lattice — Dattamsha Birbal motif (Mughal stone jaali)</title>
+<defs><pattern id="birbal-jaali" width="48" height="48" patternUnits="userSpaceOnUse">
+<rect stroke="#5e8c31" fill="none" stroke-width="2" x="14" y="14" width="20" height="20"/>
+<rect stroke="#5e8c31" fill="none" stroke-width="2" x="14" y="14" width="20" height="20" transform="rotate(45 24 24)"/>
+<path stroke="#5e8c31" stroke-opacity="0.45" fill="none" stroke-width="2" d="M0,24 H9.9 M38.1,24 H48 M24,0 V9.9 M24,38.1 V48"/>
+<circle fill="#5e8c31" cx="24" cy="24" r="2.5"/></pattern></defs>
+<rect width="384" height="48" fill="#dce1c5"/>
+<rect width="384" height="48" fill="url(#birbal-jaali)"/>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="384" height="48" viewBox="0 0 384 48">
+<title>Diya · oil lamps — Dattamsha Darshan motif (Diwali clay diya)</title>
+<defs><pattern id="darshan-diya" width="48" height="48" patternUnits="userSpaceOnUse">
+<path fill="#e6a817" d="M9,32 H39 Q36,43 24,43 Q12,43 9,32 Z"/>
+<path fill="#e6a817" d="M24,8 C29,16 29,24 24,28 C19,24 19,16 24,8 Z"/>
+<path fill="#e6a817" fill-opacity="0.45" d="M24,17 C26,21 26,24 24,26 C22,24 22,21 24,17 Z"/></pattern></defs>
+<rect width="384" height="48" fill="#f7e6c0"/>
+<rect width="384" height="48" fill="url(#darshan-diya)"/>
+</svg>

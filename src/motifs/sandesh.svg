@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="384" height="48" viewBox="0 0 384 48">
+<title>Patang · kite — Dattamsha Sandesh motif (Makar Sankranti kites)</title>
+<defs><pattern id="sandesh-patang" width="48" height="48" patternUnits="userSpaceOnUse">
+<path fill="#c62828" d="M20,4 L31,18 L20,32 L9,18 Z"/>
+<path stroke="#c62828" stroke-opacity="0.45" fill="none" stroke-width="1.5" d="M20,4 V32 M9,18 H31"/>
+<path stroke="#c62828" fill="none" stroke-width="1.8" stroke-linecap="round" d="M20,32 Q24,37 20,41 Q16,45 21,47"/>
+<path fill="#c62828" fill-opacity="0.45" d="M40,12 L44,17 L40,22 L36,17 Z"/></pattern></defs>
+<rect width="384" height="48" fill="#f0cdc3"/>
+<rect width="384" height="48" fill="url(#sandesh-patang)"/>
+</svg>

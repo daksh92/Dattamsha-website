@@ -1,0 +1,24 @@
+{
+  "site_url": "https://www.dattamsha.co.in",
+  "booking_url": "[BOOKING URL]",
+  "contact_email": "daksh@dattamsha.co.in",
+  "phone": "+91 98102 16489",
+  "founded_text": "4 November 2024",
+  "founded_iso": "2024-11-04",
+  "question_subject": "Monday question for Dattamsha",
+  "security_contact": "daksh@dattamsha.co.in",
+  "security_txt_expires": "2027-11-09T00:00:00.000Z",
+  "og_image": "/assets/img/share.png",
+  "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; form-action 'self' mailto:; base-uri 'self'; object-src 'none'",
+  "trademarks": [
+    "Anvaya",
+    "Sangam",
+    "Gargi",
+    "Birbal",
+    "Sutradhar",
+    "Margdarshak",
+    "Phala",
+    "Sandesh",
+    "Darshan"
+  ]
+}

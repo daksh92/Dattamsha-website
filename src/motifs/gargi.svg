@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="384" height="48" viewBox="0 0 384 48">
+<title>Kolam · looped line around dots — Dattamsha Gargi motif (Pulli kolam)</title>
+<defs><pattern id="gargi-kolam" width="48" height="48" patternUnits="userSpaceOnUse">
+<path stroke="#3f7d20" fill="none" stroke-width="2.5" d="M0,24 Q12,2 24,24 T48,24"/>
+<path stroke="#3f7d20" fill="none" stroke-width="2.5" d="M0,24 Q12,46 24,24 T48,24"/>
+<circle fill="#3f7d20" cx="12" cy="24" r="3"/><circle fill="#3f7d20" cx="36" cy="24" r="3"/>
+<circle fill="#3f7d20" fill-opacity="0.45" cx="0" cy="6" r="1.8"/><circle fill="#3f7d20" fill-opacity="0.45" cx="24" cy="6" r="1.8"/><circle fill="#3f7d20" fill-opacity="0.45" cx="48" cy="6" r="1.8"/>
+<circle fill="#3f7d20" fill-opacity="0.45" cx="0" cy="42" r="1.8"/><circle fill="#3f7d20" fill-opacity="0.45" cx="24" cy="42" r="1.8"/><circle fill="#3f7d20" fill-opacity="0.45" cx="48" cy="42" r="1.8"/></pattern></defs>
+<rect width="384" height="48" fill="#d5dec2"/>
+<rect width="384" height="48" fill="url(#gargi-kolam)"/>
+</svg>

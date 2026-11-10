@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="384" height="48" viewBox="0 0 384 48">
+<title>Keri buta · mango — Dattamsha Phala motif (Kashmiri and Kalamkari buta)</title>
+<defs><pattern id="phala-keri" width="48" height="48" patternUnits="userSpaceOnUse">
+<path fill="#e8731c" d="M24,44 C13,44 8,35 11,27 C14,19 23,18 25,11 C26,7 23,5 19,7 C22,1 31,3 31,11 C31,19 37,24 37,32 C37,39 31,44 24,44 Z"/>
+<circle fill="#e8731c" fill-opacity="0.45" cx="23" cy="34" r="3.4"/>
+<circle fill="#e8731c" fill-opacity="0.45" cx="42" cy="12" r="1.8"/><circle fill="#e8731c" fill-opacity="0.45" cx="42" cy="36" r="1.8"/></pattern></defs>
+<rect width="384" height="48" fill="#f7dcc1"/>
+<rect width="384" height="48" fill="url(#phala-keri)"/>
+</svg>
