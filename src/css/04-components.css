@@ -1,0 +1,132 @@
+/* ---- Type ---- */
+.eyebrow {
+  font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--phala-deep);
+}
+.display-1 {
+  margin-top: 12px;
+  font-family: var(--font-display); font-weight: 400;
+  font-size: clamp(38px, 4.6vw, 60px); line-height: 1.06; letter-spacing: -0.5px;
+  color: var(--ink);
+}
+.display-2 {
+  margin-top: 12px;
+  font-family: var(--font-display); font-weight: 400;
+  font-size: clamp(28px, 3.2vw, 40px); line-height: 1.12;
+  color: var(--ink);
+}
+.lede { font-size: 19px; line-height: 1.5; color: var(--text); max-width: 600px; }
+.intro { font-size: 18px; line-height: 1.55; color: var(--text); max-width: 720px; }
+.note { font-size: 12px; color: var(--text-muted); }
+
+/* Text colour: the text-safe -deep tone of each product, plus neutrals. */
+.t-sangam { color: var(--sangam-deep); }
+.t-gargi { color: var(--gargi-deep); }
+.t-birbal { color: var(--birbal-deep); }
+.t-sutradhar { color: var(--sutradhar-deep); }
+.t-margdarshak { color: var(--margdarshak-deep); }
+.t-phala { color: var(--phala-deep); }
+.t-sandesh { color: var(--sandesh-deep); }
+.t-darshan { color: var(--darshan-deep); }
+.t-ink { color: var(--ink); }
+.t-text { color: var(--text); }
+.t-muted { color: var(--text-muted); }
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-block;
+  font-family: inherit; font-weight: 600; font-size: 15px; line-height: 1.2;
+  padding: 12px 20px; border: 0; border-radius: var(--radius-md);
+  text-decoration: none; cursor: pointer;
+}
+.btn--kesar { background: var(--phala); color: var(--phala-on); }
+.btn--line { background: transparent; color: var(--ink); border: 1px solid var(--ink); }
+.btn--sm { padding: 8px 14px; font-size: 13px; }
+.btn-row { display: flex; gap: 12px; flex-wrap: wrap; }
+/* Forced colours drop the fill, so give every button an outline to keep it reading as a button. */
+@media (forced-colors: active) {
+  .btn { border: 1px solid ButtonText; }
+}
+
+/* ---- Motif bands (decorative; always aria-hidden) ----
+   Written in pages as <div class="motif motif--NAME [motif--on] [motif--16]" aria-hidden="true">;
+   tools/build.py expands each into the design's inline SVG pattern band at its exact scale. */
+/* The band height comes from the SVG's height attribute (default 24; motif--12 … motif--22). */
+.motif { display: block; width: 100%; }
+
+/* ---- Pigment grounds ---- */
+.block-sangam { background: var(--sangam); color: var(--sangam-on); }
+.block-gargi { background: var(--gargi); color: var(--gargi-on); }
+.block-birbal { background: var(--birbal); color: var(--birbal-on); }
+.block-sutradhar { background: var(--sutradhar); color: var(--sutradhar-on); }
+.block-margdarshak { background: var(--margdarshak); color: var(--margdarshak-on); }
+.block-phala { background: var(--phala); color: var(--phala-on); }
+.block-sandesh { background: var(--sandesh); color: var(--sandesh-on); }
+.block-darshan { background: var(--darshan); color: var(--darshan-on); }
+.tint-sangam { background: var(--sangam-tint); color: var(--ink); }
+.tint-gargi { background: var(--gargi-tint); color: var(--ink); }
+.tint-birbal { background: var(--birbal-tint); color: var(--ink); }
+.tint-sutradhar { background: var(--sutradhar-tint); color: var(--ink); }
+.tint-margdarshak { background: var(--margdarshak-tint); color: var(--ink); }
+.tint-phala { background: var(--phala-tint); color: var(--ink); }
+.tint-sandesh { background: var(--sandesh-tint); color: var(--ink); }
+.tint-darshan { background: var(--darshan-tint); color: var(--ink); }
+
+/* ---- Cards and panels ---- */
+.card {
+  background: var(--surface-raised); border: 1px solid var(--rule);
+  border-radius: var(--radius-lg); overflow: hidden;
+}
+/* A product app header bar: name, Devanagari, a right-aligned note. */
+.app-head { display: flex; align-items: baseline; gap: 10px; padding: 10px 18px; }
+.app-head__name { font-family: var(--font-display); font-size: 18px; }
+.app-head__deva { font-family: var(--font-devanagari); font-size: 13px; }
+.app-head__note { margin-left: auto; font-size: 12px; }
+
+/* ---- Pills ---- */
+.pill {
+  display: inline-block; font-size: 12px; font-weight: 600; white-space: nowrap;
+  padding: 3px 10px; border-radius: var(--radius-pill);
+}
+.pill--critical { color: var(--status-critical); background: var(--status-critical-tint); }
+.pill--roadmap { font-size: 11px; padding: 2px 8px; color: var(--phala-deep); background: var(--ground); }
+
+/* ---- Definition rows: label left, text right, hairline above each ---- */
+.rows > div { display: flex; gap: 14px; padding: 12px 0; border-top: 1px solid var(--rule); }
+.rows dt {
+  flex: none; width: 150px; padding-top: 3px;
+  font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--phala-deep);
+}
+.rows dd { font-size: 15px; line-height: 1.55; color: var(--text); }
+.rows--narrow dt { width: 110px; }
+.rows--small dd { font-size: 14px; line-height: 1.5; }
+.rows--end { border-bottom: 1px solid var(--rule); }
+@media (max-width: 480px) {
+  .rows > div { flex-direction: column; gap: 4px; }
+  .rows dt { width: auto; }
+}
+
+/* Lists with a hairline above each item. */
+.ruled { list-style: none; }
+.ruled > li { padding: 12px 0; border-top: 1px solid var(--rule); }
+
+/* A code block whose lines do not wrap (the home SQL block below 600px) scrolls sideways
+   instead of widening the page. */
+.code { overflow-x: auto; }
+.nowrap { white-space: nowrap; }
+
+/* Closing call-out: phala tint card with a keri band, a line, a sentence and a button. */
+.cta-strip { border-radius: var(--radius-lg); overflow: hidden; }
+.cta-strip__body { display: flex; flex-wrap: wrap; gap: 24px; align-items: center; padding: 24px 28px 28px; }
+.cta-strip__text { flex: 1 1 400px; min-width: 0; }
+.cta-strip__title { font-family: var(--font-display); font-weight: 400; font-size: 26px; line-height: 1.15; color: var(--ink); }
+.cta-strip__lede { margin-top: 10px; font-size: 15px; line-height: 1.5; color: var(--text); }
+@media (max-width: 600px) { .cta-strip__body { padding: 20px 20px 24px; } }
+
+/* Status pills used in briefs. */
+.pill--warning { color: var(--status-warning); background: var(--status-warning-tint); }
+.pill--good { color: var(--status-good); background: var(--status-good-tint); }
+
+/* In eyebrows the design sets Devanagari as plain text in the eyebrow's own font stack. */
+.eyebrow .deva { font: inherit; }

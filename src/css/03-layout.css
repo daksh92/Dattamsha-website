@@ -1,0 +1,81 @@
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+
+/* Page sections alternate ground and surface, 80px top and bottom. */
+.section { background: var(--ground); }
+.section > .wrap { padding-top: 80px; padding-bottom: 80px; }
+.section--surface { background: var(--surface); }
+.section--hero > .wrap { padding-top: 64px; padding-bottom: 64px; }
+
+/* Flexible rows that wrap into a stack on narrow screens. */
+.row { display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start; }
+.row > * { min-width: 0; }
+.row--center { align-items: center; }
+
+/* ---- Header ---- */
+.site-header { background: var(--ground); }
+.site-header__bar {
+  display: flex; align-items: center; gap: 28px; flex-wrap: wrap;
+  padding-top: 18px; padding-bottom: 18px;
+}
+.brand { display: flex; align-items: baseline; gap: 8px; text-decoration: none; }
+.brand__name { font-family: var(--font-display); font-size: 26px; color: var(--ink); }
+/* "DATA LABS" is part of the logo lockup, in logo-cyan. WCAG 1.4.3 exempts logotypes from
+   contrast minimums, so it is drawn as generated content (the link's accessible name,
+   "Dattamsha Data Labs, home", comes from aria-label) and automated contrast checks skip it. */
+.brand__labs {
+  font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--logo-cyan);
+}
+.brand__labs::after { content: "Data Labs"; }
+.site-menu { display: flex; align-items: center; gap: 28px; margin-left: auto; }
+.site-nav ul { display: flex; flex-wrap: wrap; gap: 24px; list-style: none; font-size: 15px; }
+.site-nav a { text-decoration: none; color: var(--text); font-size: 15px; }
+.site-nav a:hover { color: var(--ink); }
+.site-nav a[aria-current="page"] { color: var(--ink); font-weight: 600; }
+
+.menu-toggle {
+  display: none;
+  margin-left: auto;
+  background: transparent; color: var(--ink);
+  border: 1px solid var(--ink); border-radius: var(--radius-md);
+  padding: 8px 14px; font-size: 15px; font-weight: 600; line-height: 1.2; cursor: pointer;
+}
+
+/* Below 960px the nav collapses behind the Menu button. Without JavaScript,
+   assets/css/no-js.css (loaded in <noscript>) shows the links instead. */
+@media (max-width: 959px) {
+  .menu-toggle { display: inline-block; }
+  .site-menu { display: none; }
+  .site-menu.is-open {
+    display: flex; flex-direction: column; align-items: stretch; gap: 16px;
+    flex-basis: 100%; margin-left: 0; padding: 8px 0 4px;
+  }
+  .site-menu.is-open .site-nav ul { flex-direction: column; gap: 0; }
+  .site-menu.is-open .site-nav a { display: block; padding: 12px 0; border-top: 1px solid var(--rule); font-size: 17px; }
+  .site-menu.is-open .btn { align-self: flex-start; }
+}
+
+/* ---- Footer ---- */
+.site-footer { background: var(--margdarshak); color: var(--margdarshak-on); }
+.site-footer__inner {
+  display: flex; flex-wrap: wrap; gap: 32px; justify-content: space-between;
+  padding-top: 32px; padding-bottom: 40px; font-size: 14px; line-height: 1.6;
+}
+.site-footer__org { flex: 1 1 320px; }
+.site-footer__name { font-family: var(--font-display); font-size: 22px; }
+.site-footer__meta { margin-top: 6px; opacity: .85; }
+.site-footer__links { display: flex; gap: 28px; flex-wrap: wrap; align-items: flex-start; list-style: none; }
+.site-footer a { color: var(--margdarshak-on); }
+.site-footer a:hover { color: var(--margdarshak-on); text-decoration-thickness: 2px; }
+.site-footer :focus-visible { outline-color: var(--margdarshak-on); }
+.site-footer__legal { flex-basis: 100%; font-size: 12px; opacity: .7; }
+/* The design sets अन्वय here as plain text in the paragraph's own font stack. */
+.site-footer__legal .deva { font: inherit; }
+
+@media (max-width: 600px) {
+  /* Sides only: the header bar and footer also carry .wrap and keep their own top/bottom padding. */
+  .wrap { padding-inline: 20px; }
+  .section > .wrap { padding-top: 56px; padding-bottom: 56px; }
+  .section--hero > .wrap { padding-top: 40px; padding-bottom: 48px; }
+  .row { gap: 32px; }
+}
