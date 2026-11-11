@@ -16,6 +16,7 @@
 .home-mb-56 { margin-bottom: 56px; }
 .home-mw-760 { max-width: 760px; }
 .home-mw-820 { max-width: 820px; }
+.home-balance { text-wrap: balance; }
 
 .home-body-l { font-size: 18px; line-height: 1.55; color: var(--text); }
 .home-hint { font-size: 15px; color: var(--text-muted); }
@@ -63,6 +64,8 @@
    look like the others; mark it with a thicker system Highlight border instead. */
 @media (forced-colors: active) {
   .home-q[aria-pressed="true"] { border: 3px solid Highlight; padding: 8px 12px; }
+  /* Tinted panels lose their fill here; keep their edge. */
+  .home-pillar { border: 1px solid CanvasText; }
 }
 
 .home-clients {
@@ -89,6 +92,8 @@
 .home-compare thead th { padding-top: 0; padding-bottom: 12px; }
 .home-compare tbody th { width: 22%; font-size: 15px; font-weight: 600; line-height: 1.4; color: var(--ink); }
 .home-compare td { width: 39%; font-size: 15px; line-height: 1.55; color: var(--text); }
+/* Before in body text, after in ink, so the two columns read as a before and after. */
+.home-compare td + td { color: var(--ink); }
 .home-compare__label { display: none; }
 @media (max-width: 720px) {
   .home-compare, .home-compare tbody, .home-compare tr, .home-compare th, .home-compare td { display: block; width: auto; }
@@ -107,6 +112,8 @@
 .home-sum .home-rule-title { margin-bottom: 4px; }
 .home-sum__line { font-size: 17px; line-height: 1.5; color: var(--ink); font-variant-numeric: tabular-nums; }
 .home-sum__note { margin-top: 4px; font-size: 13px; color: var(--text); }
+/* The answer in the display face, as the result lines on the story cards. */
+.home-sum__result { font-family: var(--font-display); font-size: 20px; color: var(--phala-deep); }
 
 /* ---- 03 · The night before: Birbal case file ---- */
 .home-night__text { flex: 1 1 380px; max-width: 520px; }
@@ -218,7 +225,19 @@
 }
 
 /* ---- 08 · Where it runs today ---- */
-.home-stories { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 20px; }
+.home-stories { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(210px, 100%), 1fr)); gap: 20px; }
+/* Tablets and small laptops: three and two. Wide screens: all five in one row. */
+@media (min-width: 721px) and (max-width: 1179.98px) {
+  .home-stories { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (min-width: 1180px) {
+  .home-stories { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; }
+  .home-story { padding: 16px 16px 18px; }
+}
+/* Wherever cards share a row, every sector label keeps two lines so the figures line up. */
+@media (min-width: 721px) {
+  .home-story__name { line-height: 1.3; min-height: 2.6em; }
+}
 .home-story {
   display: flex; flex-direction: column; gap: 8px;
   padding: 18px 20px 20px; border-radius: var(--radius-lg);
@@ -234,9 +253,10 @@
 .home-story__name { font-size: 15px; font-weight: 600; }
 .home-story__text { font-size: 14px; line-height: 1.5; color: var(--text); }
 /* Result first: the figure large, then what it measures, in the design's result-line style. */
-.home-story__num { margin-top: 4px; font-family: var(--font-display); font-size: 40px; line-height: 1; }
+.home-story__num { margin-top: 4px; font-family: var(--font-display); font-size: clamp(28px, 11vw, 40px); line-height: 1; white-space: nowrap; }
 .home-story__measure { font-family: var(--font-display); font-size: 18px; line-height: 1.3; }
-.home-story__more { margin-top: auto; font-size: 13px; }
+.home-story__run { color: var(--ink); }
+.home-story__more { margin-top: auto; padding-top: 8px; font-size: 13px; }
 
 /* ---- 09 · The platform, briefly ---- */
 .home-doors { display: flex; flex-wrap: wrap; gap: 16px; }
